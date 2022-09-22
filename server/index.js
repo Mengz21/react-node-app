@@ -9,8 +9,8 @@ const app = express();
 
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
-
-mongoose.connect("mongodb+srv://hulo9:MONGODB_KEY@cluster0.ihunb0h.mongodb.net/blogDB", {useNewUrlParser : true});
+//process.env.MONGODB_URI
+mongoose.connect("process.env.MONGODB_URI", {useNewUrlParser : true});
 
 
 app.get("/api", (req, res) => {
